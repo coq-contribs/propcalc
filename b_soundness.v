@@ -79,9 +79,9 @@ Ltac in_solve := intros;repeat
    | H:In _ (_++_) |- _ => apply in_app_iff in H as [];subst
    | |- In _ (_++_) => apply in_app_iff;(left;in_solve;fail)||(right;in_solve;fail) 
   end
-||(constructor;reflexivity)
+||(once constructor;reflexivity)
 ||constructor 2).
-Ltac is_ass := econstructor;in_solve.
+Ltac is_ass := once econstructor;in_solve.
 
 Ltac case_bool v A := let HA := fresh "H" in
 (case_eq (TrueQ v A);intro HA;try rewrite HA in *;simpl in *;try trivial;try contradiction).
