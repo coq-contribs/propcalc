@@ -7,7 +7,7 @@ Delimit Scope My_scope with M.
 Open Scope My_scope. 
 
 Parameter PropVars : Set.
-Hypothesis Varseq_dec : forall x y:PropVars, {x = y} + {x <> y}.
+Axiom Varseq_dec : forall x y:PropVars, {x = y} + {x <> y}.
 
 (** We define a construction on lists which we'll use often later.
 
